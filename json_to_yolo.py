@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 
 input_path = "./coco/labels/train/*.json"
-output_path = "./test_data/yolo/labels/train/"
+output_path = "./yolo/labels/train/"
 
 files = glob.glob(input_path)
 for file in files:

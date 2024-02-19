@@ -66,6 +66,12 @@ for file in files:
                 dfb = dfa.loc[:, :].replace(items, items_to_change)
                 
             dfAsString = dfb.to_string(header=False, index=False)
-            t.write(dfAsString)
+            # t.write(dfAsString)
+            tt = [list(x) for x in df.to_records(index=False)]
+            for i in tt:
+                classs = i[0]
+                p = i[1]
+                xc, yc, ww, hh = tuple([float(x) for x in p.split(' ')])
+                t.write("%s %.6f %.6f %.6f %.6f\n" % (classs, xc, yc, ww, hh))
         t.close()
     f.close()
